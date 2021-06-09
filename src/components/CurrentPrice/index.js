@@ -15,6 +15,7 @@ const estilo = StyleSheet.create({
       width:"100%",
       height:"auto",
       alignItems:"center",
+      marginBottom:10,
     },
     currentPrice: {
         color:"#f50d41",
