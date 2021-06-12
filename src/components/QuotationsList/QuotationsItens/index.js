@@ -1,17 +1,17 @@
 import React, { Fragment } from 'react';
 import { Text, View, Image, StyleSheet } from 'react-native';
 
-export default function Lista_Itens(){
+export default function Lista_Itens(props){
     return(
         <View style={itens.main}>
             <View style={itens.esquerda}>
                 <View style={itens.boxImgData}>
                     <Image style={itens.img} source={require("../../../../img/bit.png")} />
-                    <Text style={itens.data}>09/05/2021</Text>
+                    <Text style={itens.data}>{props.data}</Text>
                 </View>
             </View>
             <View style={itens.direita}>
-                <Text style={itens.preco}>$ 53331.052</Text>
+                <Text style={itens.preco}>${props.valor}</Text>
             </View>
         </View>
     )
@@ -39,19 +39,19 @@ const itens = StyleSheet.create({
         alignItems:"flex-end",
     },
     data:{
-        fontSize:16,
+        fontSize:14,
         paddingLeft:10,
         color:"#ffffff",
         fontWeight:"bold",
     },
     preco:{
-        fontSize:18,
+        fontSize:14,
         color:"#ffffff",
         fontWeight:"bold",
     },
     img:{
-        width:40,
-        height:40,
+        width:30,
+        height:30,
         marginLeft:2,
     },
     boxImgData:{
