@@ -24,11 +24,14 @@ function url(qtdDias){
 }
 
 async function getListCoins(url){
+  let id_list = 0;
   let response = await fetch(url);
   let returnApi = await response.json();
   let selectListCotacoes = returnApi.bpi;
   const queryCoinsList = Object.keys(selectListCotacoes).map((key) =>{
+    id_list++;
     return{
+      id: String(id_list),
       data: key.split("-").reverse().join("/"),
       valor: selectListCotacoes[key]
     };

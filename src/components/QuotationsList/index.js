@@ -23,14 +23,15 @@ export default function Lista_Cotacoes(props){
           <Text style={estilo_cotacoes.textoBotao}>6M</Text>
         </TouchableOpacity>
       </View>
-      <ScrollView>
+
         <FlatList 
           data= {props.listTransactions}
+          keyExtractor={item => item.id}
           renderItem= {({item})=>{
             return <Lista_Itens valor={item.valor} data={item.data} />
           }}
         />
-      </ScrollView>
+
     </Fragment>
   )
 }
